@@ -17,13 +17,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$NftListStateTearOff {
   const _$NftListStateTearOff();
 
-  _NftListState call(
-      {bool loading = false,
-      List<NewlyMintedNft>? newlyMintedNfts,
-      Error? error}) {
+  _NftListState call({bool loading = false, List<Nft>? nfts, String? error}) {
     return _NftListState(
       loading: loading,
-      newlyMintedNfts: newlyMintedNfts,
+      nfts: nfts,
       error: error,
     );
   }
@@ -35,9 +32,8 @@ const $NftListState = _$NftListStateTearOff();
 /// @nodoc
 mixin _$NftListState {
   bool get loading => throw _privateConstructorUsedError;
-  List<NewlyMintedNft>? get newlyMintedNfts =>
-      throw _privateConstructorUsedError;
-  Error? get error => throw _privateConstructorUsedError;
+  List<Nft>? get nfts => throw _privateConstructorUsedError;
+  String? get error => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NftListStateCopyWith<NftListState> get copyWith =>
@@ -49,8 +45,7 @@ abstract class $NftListStateCopyWith<$Res> {
   factory $NftListStateCopyWith(
           NftListState value, $Res Function(NftListState) then) =
       _$NftListStateCopyWithImpl<$Res>;
-  $Res call(
-      {bool loading, List<NewlyMintedNft>? newlyMintedNfts, Error? error});
+  $Res call({bool loading, List<Nft>? nfts, String? error});
 }
 
 /// @nodoc
@@ -64,7 +59,7 @@ class _$NftListStateCopyWithImpl<$Res> implements $NftListStateCopyWith<$Res> {
   @override
   $Res call({
     Object? loading = freezed,
-    Object? newlyMintedNfts = freezed,
+    Object? nfts = freezed,
     Object? error = freezed,
   }) {
     return _then(_value.copyWith(
@@ -72,14 +67,14 @@ class _$NftListStateCopyWithImpl<$Res> implements $NftListStateCopyWith<$Res> {
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as bool,
-      newlyMintedNfts: newlyMintedNfts == freezed
-          ? _value.newlyMintedNfts
-          : newlyMintedNfts // ignore: cast_nullable_to_non_nullable
-              as List<NewlyMintedNft>?,
+      nfts: nfts == freezed
+          ? _value.nfts
+          : nfts // ignore: cast_nullable_to_non_nullable
+              as List<Nft>?,
       error: error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
-              as Error?,
+              as String?,
     ));
   }
 }
@@ -91,8 +86,7 @@ abstract class _$NftListStateCopyWith<$Res>
           _NftListState value, $Res Function(_NftListState) then) =
       __$NftListStateCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {bool loading, List<NewlyMintedNft>? newlyMintedNfts, Error? error});
+  $Res call({bool loading, List<Nft>? nfts, String? error});
 }
 
 /// @nodoc
@@ -108,7 +102,7 @@ class __$NftListStateCopyWithImpl<$Res> extends _$NftListStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? loading = freezed,
-    Object? newlyMintedNfts = freezed,
+    Object? nfts = freezed,
     Object? error = freezed,
   }) {
     return _then(_NftListState(
@@ -116,14 +110,14 @@ class __$NftListStateCopyWithImpl<$Res> extends _$NftListStateCopyWithImpl<$Res>
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as bool,
-      newlyMintedNfts: newlyMintedNfts == freezed
-          ? _value.newlyMintedNfts
-          : newlyMintedNfts // ignore: cast_nullable_to_non_nullable
-              as List<NewlyMintedNft>?,
+      nfts: nfts == freezed
+          ? _value.nfts
+          : nfts // ignore: cast_nullable_to_non_nullable
+              as List<Nft>?,
       error: error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
-              as Error?,
+              as String?,
     ));
   }
 }
@@ -131,21 +125,20 @@ class __$NftListStateCopyWithImpl<$Res> extends _$NftListStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_NftListState extends _NftListState {
-  const _$_NftListState(
-      {this.loading = false, this.newlyMintedNfts, this.error})
+  const _$_NftListState({this.loading = false, this.nfts, this.error})
       : super._();
 
   @JsonKey(defaultValue: false)
   @override
   final bool loading;
   @override
-  final List<NewlyMintedNft>? newlyMintedNfts;
+  final List<Nft>? nfts;
   @override
-  final Error? error;
+  final String? error;
 
   @override
   String toString() {
-    return 'NftListState(loading: $loading, newlyMintedNfts: $newlyMintedNfts, error: $error)';
+    return 'NftListState(loading: $loading, nfts: $nfts, error: $error)';
   }
 
   @override
@@ -154,14 +147,13 @@ class _$_NftListState extends _NftListState {
         (other.runtimeType == runtimeType &&
             other is _NftListState &&
             (identical(other.loading, loading) || other.loading == loading) &&
-            const DeepCollectionEquality()
-                .equals(other.newlyMintedNfts, newlyMintedNfts) &&
+            const DeepCollectionEquality().equals(other.nfts, nfts) &&
             (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, loading,
-      const DeepCollectionEquality().hash(newlyMintedNfts), error);
+  int get hashCode => Object.hash(
+      runtimeType, loading, const DeepCollectionEquality().hash(nfts), error);
 
   @JsonKey(ignore: true)
   @override
@@ -170,18 +162,16 @@ class _$_NftListState extends _NftListState {
 }
 
 abstract class _NftListState extends NftListState {
-  const factory _NftListState(
-      {bool loading,
-      List<NewlyMintedNft>? newlyMintedNfts,
-      Error? error}) = _$_NftListState;
+  const factory _NftListState({bool loading, List<Nft>? nfts, String? error}) =
+      _$_NftListState;
   const _NftListState._() : super._();
 
   @override
   bool get loading;
   @override
-  List<NewlyMintedNft>? get newlyMintedNfts;
+  List<Nft>? get nfts;
   @override
-  Error? get error;
+  String? get error;
   @override
   @JsonKey(ignore: true)
   _$NftListStateCopyWith<_NftListState> get copyWith =>

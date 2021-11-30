@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:singular_app/domain/newly_minted_nfts/entities/newly_minted_nft.dart';
 
 part 'newly_minted_nfts_response.freezed.dart';
+part 'newly_minted_nfts_response.g.dart';
 
 @freezed
 class NewlyMintedNftsResponse with _$NewlyMintedNftsResponse {

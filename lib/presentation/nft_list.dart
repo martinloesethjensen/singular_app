@@ -5,12 +5,23 @@ import 'package:singular_app/dependencies/dependencies.dart';
 import 'package:singular_app/presentation/nft_list_cubit.dart';
 import 'package:singular_app/presentation/nft_list_state.dart';
 
-class NftList extends StatelessWidget {
+class NftList extends StatefulWidget {
   NftList({Key? key}) : super(key: key);
 
+  @override
+  State<NftList> createState() => _NftListState();
+}
+
+class _NftListState extends State<NftList> {
   final _presenter = NftListCubit(
-    getNewlyMintedNfts: dependencies.get(),
+    getMyNftsUseCase: dependencies.get(),
   );
+
+  @override
+  void initState() {
+    super.initState();
+    _presenter.fetchNfts();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +31,27 @@ class NftList extends StatelessWidget {
           child: BlocBuilder<NftListCubit, NftListState>(
             bloc: _presenter,
             builder: (context, state) {
-              if (state.loading) {
+              if (state.loading || state.nfts == null) {
                 return Center(
                   child: CircularProgressIndicator(),
                 );
               }
+
+              if (!state.hasNfts) {
+                return Center(
+                  child: Text('No NFTs!'),
+                );
+              }
+
+              if (state.hasError) {
+                return Center(
+                  child: Text(state.error!),
+                );
+              }
+
               return Column(
                 children: [
-                  ...state.newlyMintedNfts!.map(
+                  ...state.nfts!.map(
                     (i) => Container(
                       padding: const EdgeInsets.all(16),
                       child: CachedNetworkImage(

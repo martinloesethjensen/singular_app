@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'newly_minted_nft.freezed.dart';
+part 'newly_minted_nft.g.dart';
 
 @freezed
 class NewlyMintedNft with _$NewlyMintedNft {
