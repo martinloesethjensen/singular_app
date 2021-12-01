@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'nft_list_state.dart';
+part of 'my_nft_list_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,11 +14,11 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$NftListStateTearOff {
-  const _$NftListStateTearOff();
+class _$MyNftListStateTearOff {
+  const _$MyNftListStateTearOff();
 
-  _NftListState call({bool loading = false, List<Nft>? nfts, String? error}) {
-    return _NftListState(
+  _MyNftListState call({bool loading = false, List<Nft>? nfts, String? error}) {
+    return _MyNftListState(
       loading: loading,
       nfts: nfts,
       error: error,
@@ -27,34 +27,35 @@ class _$NftListStateTearOff {
 }
 
 /// @nodoc
-const $NftListState = _$NftListStateTearOff();
+const $MyNftListState = _$MyNftListStateTearOff();
 
 /// @nodoc
-mixin _$NftListState {
+mixin _$MyNftListState {
   bool get loading => throw _privateConstructorUsedError;
   List<Nft>? get nfts => throw _privateConstructorUsedError;
   String? get error => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $NftListStateCopyWith<NftListState> get copyWith =>
+  $MyNftListStateCopyWith<MyNftListState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NftListStateCopyWith<$Res> {
-  factory $NftListStateCopyWith(
-          NftListState value, $Res Function(NftListState) then) =
-      _$NftListStateCopyWithImpl<$Res>;
+abstract class $MyNftListStateCopyWith<$Res> {
+  factory $MyNftListStateCopyWith(
+          MyNftListState value, $Res Function(MyNftListState) then) =
+      _$MyNftListStateCopyWithImpl<$Res>;
   $Res call({bool loading, List<Nft>? nfts, String? error});
 }
 
 /// @nodoc
-class _$NftListStateCopyWithImpl<$Res> implements $NftListStateCopyWith<$Res> {
-  _$NftListStateCopyWithImpl(this._value, this._then);
+class _$MyNftListStateCopyWithImpl<$Res>
+    implements $MyNftListStateCopyWith<$Res> {
+  _$MyNftListStateCopyWithImpl(this._value, this._then);
 
-  final NftListState _value;
+  final MyNftListState _value;
   // ignore: unused_field
-  final $Res Function(NftListState) _then;
+  final $Res Function(MyNftListState) _then;
 
   @override
   $Res call({
@@ -80,24 +81,25 @@ class _$NftListStateCopyWithImpl<$Res> implements $NftListStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$NftListStateCopyWith<$Res>
-    implements $NftListStateCopyWith<$Res> {
-  factory _$NftListStateCopyWith(
-          _NftListState value, $Res Function(_NftListState) then) =
-      __$NftListStateCopyWithImpl<$Res>;
+abstract class _$MyNftListStateCopyWith<$Res>
+    implements $MyNftListStateCopyWith<$Res> {
+  factory _$MyNftListStateCopyWith(
+          _MyNftListState value, $Res Function(_MyNftListState) then) =
+      __$MyNftListStateCopyWithImpl<$Res>;
   @override
   $Res call({bool loading, List<Nft>? nfts, String? error});
 }
 
 /// @nodoc
-class __$NftListStateCopyWithImpl<$Res> extends _$NftListStateCopyWithImpl<$Res>
-    implements _$NftListStateCopyWith<$Res> {
-  __$NftListStateCopyWithImpl(
-      _NftListState _value, $Res Function(_NftListState) _then)
-      : super(_value, (v) => _then(v as _NftListState));
+class __$MyNftListStateCopyWithImpl<$Res>
+    extends _$MyNftListStateCopyWithImpl<$Res>
+    implements _$MyNftListStateCopyWith<$Res> {
+  __$MyNftListStateCopyWithImpl(
+      _MyNftListState _value, $Res Function(_MyNftListState) _then)
+      : super(_value, (v) => _then(v as _MyNftListState));
 
   @override
-  _NftListState get _value => super._value as _NftListState;
+  _MyNftListState get _value => super._value as _MyNftListState;
 
   @override
   $Res call({
@@ -105,7 +107,7 @@ class __$NftListStateCopyWithImpl<$Res> extends _$NftListStateCopyWithImpl<$Res>
     Object? nfts = freezed,
     Object? error = freezed,
   }) {
-    return _then(_NftListState(
+    return _then(_MyNftListState(
       loading: loading == freezed
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
@@ -124,8 +126,8 @@ class __$NftListStateCopyWithImpl<$Res> extends _$NftListStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NftListState extends _NftListState {
-  const _$_NftListState({this.loading = false, this.nfts, this.error})
+class _$_MyNftListState extends _MyNftListState {
+  const _$_MyNftListState({this.loading = false, this.nfts, this.error})
       : super._();
 
   @JsonKey(defaultValue: false)
@@ -138,14 +140,14 @@ class _$_NftListState extends _NftListState {
 
   @override
   String toString() {
-    return 'NftListState(loading: $loading, nfts: $nfts, error: $error)';
+    return 'MyNftListState(loading: $loading, nfts: $nfts, error: $error)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _NftListState &&
+            other is _MyNftListState &&
             (identical(other.loading, loading) || other.loading == loading) &&
             const DeepCollectionEquality().equals(other.nfts, nfts) &&
             (identical(other.error, error) || other.error == error));
@@ -157,14 +159,14 @@ class _$_NftListState extends _NftListState {
 
   @JsonKey(ignore: true)
   @override
-  _$NftListStateCopyWith<_NftListState> get copyWith =>
-      __$NftListStateCopyWithImpl<_NftListState>(this, _$identity);
+  _$MyNftListStateCopyWith<_MyNftListState> get copyWith =>
+      __$MyNftListStateCopyWithImpl<_MyNftListState>(this, _$identity);
 }
 
-abstract class _NftListState extends NftListState {
-  const factory _NftListState({bool loading, List<Nft>? nfts, String? error}) =
-      _$_NftListState;
-  const _NftListState._() : super._();
+abstract class _MyNftListState extends MyNftListState {
+  const factory _MyNftListState(
+      {bool loading, List<Nft>? nfts, String? error}) = _$_MyNftListState;
+  const _MyNftListState._() : super._();
 
   @override
   bool get loading;
@@ -174,6 +176,6 @@ abstract class _NftListState extends NftListState {
   String? get error;
   @override
   @JsonKey(ignore: true)
-  _$NftListStateCopyWith<_NftListState> get copyWith =>
+  _$MyNftListStateCopyWith<_MyNftListState> get copyWith =>
       throw _privateConstructorUsedError;
 }

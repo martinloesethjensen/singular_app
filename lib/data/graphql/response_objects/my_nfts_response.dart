@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:singular_app/domain/nfts/entities/nft.dart';
+import 'package:singular_app/domain/my_nfts/entities/nft.dart';
 
 part 'my_nfts_response.freezed.dart';
 

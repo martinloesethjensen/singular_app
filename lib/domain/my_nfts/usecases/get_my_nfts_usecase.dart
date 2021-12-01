@@ -1,7 +1,7 @@
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:singular_app/data/graphql/queries/my_nfts.dart';
 import 'package:singular_app/data/graphql/response_objects/my_nfts_response.dart';
-import 'package:singular_app/domain/nfts/entities/nft.dart';
+import 'package:singular_app/domain/my_nfts/entities/nft.dart';
 import 'package:singular_app/domain/usecase/usecase.dart';
 
 class GetMyNftsUseCase extends OutputUseCase<Future<List<Nft>>> {
