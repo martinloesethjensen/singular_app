@@ -14,7 +14,8 @@ class MyNftListCubit extends Cubit<MyNftListState> {
     emit(state.copyWith(loading: true));
 
     try {
-      final _nfts = await getMyNftsUseCase.run();
+      const _input = 'Etj4vCiSTCV939vibdTUyaL2YS2gNy5pDr5AnMkp33ybr4f';
+      final _nfts = await getMyNftsUseCase.run(_input);
 
       emit(state.copyWith(
         loading: false,

@@ -24,7 +24,9 @@ _$_GetMyNftsResponse _$$_GetMyNftsResponseFromJson(Map<String, dynamic> json) =>
       owner: json['owner'] as String,
       forsale: json['forsale'] as int,
       name: json['name'] as String,
-      metadataImage: json['metadata_image'] as String,
+      metadataContentType: json['metadata_content_type'] as String,
+      metadataImage: json['metadata_image'] as String?,
+      metadataAnimationUrl: json['metadata_animation_url'] as String?,
       description: json['metadata_description'] as String?,
       id: json['id'] as String,
     );
@@ -36,7 +38,9 @@ Map<String, dynamic> _$$_GetMyNftsResponseToJson(
       'owner': instance.owner,
       'forsale': instance.forsale,
       'name': instance.name,
+      'metadata_content_type': instance.metadataContentType,
       'metadata_image': instance.metadataImage,
+      'metadata_animation_url': instance.metadataAnimationUrl,
       'metadata_description': instance.description,
       'id': instance.id,
     };

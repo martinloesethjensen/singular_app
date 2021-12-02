@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:singular_app/domain/my_nfts/entities/nft.dart';
+import 'package:singular_app/domain/my_nfts/entities/content_type.dart';
 
 part 'my_nfts_response.freezed.dart';
 
@@ -22,13 +23,15 @@ class GetMyNftsResponse with _$GetMyNftsResponse {
   const GetMyNftsResponse._();
 
   const factory GetMyNftsResponse({
+    required String id,
     required String collectionId,
     required String owner,
     required int forsale,
     required String name,
-    @JsonKey(name: 'metadata_image') required String metadataImage,
+    @JsonKey(name: 'metadata_content_type') required String metadataContentType,
+    @JsonKey(name: 'metadata_image') String? metadataImage,
+    @JsonKey(name: 'metadata_animation_url') String? metadataAnimationUrl,
     @JsonKey(name: 'metadata_description') String? description,
-    required String id,
   }) = _GetMyNftsResponse;
 
   factory GetMyNftsResponse.fromJson(Map<String, dynamic> json) =>
@@ -36,13 +39,15 @@ class GetMyNftsResponse with _$GetMyNftsResponse {
 
   Nft getEntity() {
     return Nft(
+      id: id,
       collectionId: collectionId,
       owner: owner,
       forsale: forsale,
       name: name,
-      metadataImage: metadataImage,
-      id: id,
-      description: description,
+      contentType: metadataContentType.toContentType(),
+      metadataImage: metadataImage ?? '',
+      metadataAnimationUrl: metadataAnimationUrl ?? '',
+      description: description ?? '',
     );
   }
 }

@@ -177,15 +177,23 @@ class _$GetMyNftsResponseTearOff {
       required String owner,
       required int forsale,
       required String name,
-      @JsonKey(name: 'metadata_image') required String metadataImage,
-      @JsonKey(name: 'metadata_description') String? description,
+      @JsonKey(name: 'metadata_content_type')
+          required String metadataContentType,
+      @JsonKey(name: 'metadata_image')
+          String? metadataImage,
+      @JsonKey(name: 'metadata_animation_url')
+          String? metadataAnimationUrl,
+      @JsonKey(name: 'metadata_description')
+          String? description,
       required String id}) {
     return _GetMyNftsResponse(
       collectionId: collectionId,
       owner: owner,
       forsale: forsale,
       name: name,
+      metadataContentType: metadataContentType,
       metadataImage: metadataImage,
+      metadataAnimationUrl: metadataAnimationUrl,
       description: description,
       id: id,
     );
@@ -205,8 +213,12 @@ mixin _$GetMyNftsResponse {
   String get owner => throw _privateConstructorUsedError;
   int get forsale => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'metadata_content_type')
+  String get metadataContentType => throw _privateConstructorUsedError;
   @JsonKey(name: 'metadata_image')
-  String get metadataImage => throw _privateConstructorUsedError;
+  String? get metadataImage => throw _privateConstructorUsedError;
+  @JsonKey(name: 'metadata_animation_url')
+  String? get metadataAnimationUrl => throw _privateConstructorUsedError;
   @JsonKey(name: 'metadata_description')
   String? get description => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
@@ -227,7 +239,9 @@ abstract class $GetMyNftsResponseCopyWith<$Res> {
       String owner,
       int forsale,
       String name,
-      @JsonKey(name: 'metadata_image') String metadataImage,
+      @JsonKey(name: 'metadata_content_type') String metadataContentType,
+      @JsonKey(name: 'metadata_image') String? metadataImage,
+      @JsonKey(name: 'metadata_animation_url') String? metadataAnimationUrl,
       @JsonKey(name: 'metadata_description') String? description,
       String id});
 }
@@ -247,7 +261,9 @@ class _$GetMyNftsResponseCopyWithImpl<$Res>
     Object? owner = freezed,
     Object? forsale = freezed,
     Object? name = freezed,
+    Object? metadataContentType = freezed,
     Object? metadataImage = freezed,
+    Object? metadataAnimationUrl = freezed,
     Object? description = freezed,
     Object? id = freezed,
   }) {
@@ -268,10 +284,18 @@ class _$GetMyNftsResponseCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      metadataContentType: metadataContentType == freezed
+          ? _value.metadataContentType
+          : metadataContentType // ignore: cast_nullable_to_non_nullable
+              as String,
       metadataImage: metadataImage == freezed
           ? _value.metadataImage
           : metadataImage // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      metadataAnimationUrl: metadataAnimationUrl == freezed
+          ? _value.metadataAnimationUrl
+          : metadataAnimationUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -296,7 +320,9 @@ abstract class _$GetMyNftsResponseCopyWith<$Res>
       String owner,
       int forsale,
       String name,
-      @JsonKey(name: 'metadata_image') String metadataImage,
+      @JsonKey(name: 'metadata_content_type') String metadataContentType,
+      @JsonKey(name: 'metadata_image') String? metadataImage,
+      @JsonKey(name: 'metadata_animation_url') String? metadataAnimationUrl,
       @JsonKey(name: 'metadata_description') String? description,
       String id});
 }
@@ -318,7 +344,9 @@ class __$GetMyNftsResponseCopyWithImpl<$Res>
     Object? owner = freezed,
     Object? forsale = freezed,
     Object? name = freezed,
+    Object? metadataContentType = freezed,
     Object? metadataImage = freezed,
+    Object? metadataAnimationUrl = freezed,
     Object? description = freezed,
     Object? id = freezed,
   }) {
@@ -339,10 +367,18 @@ class __$GetMyNftsResponseCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      metadataContentType: metadataContentType == freezed
+          ? _value.metadataContentType
+          : metadataContentType // ignore: cast_nullable_to_non_nullable
+              as String,
       metadataImage: metadataImage == freezed
           ? _value.metadataImage
           : metadataImage // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      metadataAnimationUrl: metadataAnimationUrl == freezed
+          ? _value.metadataAnimationUrl
+          : metadataAnimationUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -363,7 +399,9 @@ class _$_GetMyNftsResponse extends _GetMyNftsResponse {
       required this.owner,
       required this.forsale,
       required this.name,
-      @JsonKey(name: 'metadata_image') required this.metadataImage,
+      @JsonKey(name: 'metadata_content_type') required this.metadataContentType,
+      @JsonKey(name: 'metadata_image') this.metadataImage,
+      @JsonKey(name: 'metadata_animation_url') this.metadataAnimationUrl,
       @JsonKey(name: 'metadata_description') this.description,
       required this.id})
       : super._();
@@ -380,8 +418,14 @@ class _$_GetMyNftsResponse extends _GetMyNftsResponse {
   @override
   final String name;
   @override
+  @JsonKey(name: 'metadata_content_type')
+  final String metadataContentType;
+  @override
   @JsonKey(name: 'metadata_image')
-  final String metadataImage;
+  final String? metadataImage;
+  @override
+  @JsonKey(name: 'metadata_animation_url')
+  final String? metadataAnimationUrl;
   @override
   @JsonKey(name: 'metadata_description')
   final String? description;
@@ -390,7 +434,7 @@ class _$_GetMyNftsResponse extends _GetMyNftsResponse {
 
   @override
   String toString() {
-    return 'GetMyNftsResponse(collectionId: $collectionId, owner: $owner, forsale: $forsale, name: $name, metadataImage: $metadataImage, description: $description, id: $id)';
+    return 'GetMyNftsResponse(collectionId: $collectionId, owner: $owner, forsale: $forsale, name: $name, metadataContentType: $metadataContentType, metadataImage: $metadataImage, metadataAnimationUrl: $metadataAnimationUrl, description: $description, id: $id)';
   }
 
   @override
@@ -403,16 +447,29 @@ class _$_GetMyNftsResponse extends _GetMyNftsResponse {
             (identical(other.owner, owner) || other.owner == owner) &&
             (identical(other.forsale, forsale) || other.forsale == forsale) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.metadataContentType, metadataContentType) ||
+                other.metadataContentType == metadataContentType) &&
             (identical(other.metadataImage, metadataImage) ||
                 other.metadataImage == metadataImage) &&
+            (identical(other.metadataAnimationUrl, metadataAnimationUrl) ||
+                other.metadataAnimationUrl == metadataAnimationUrl) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.id, id) || other.id == id));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, collectionId, owner, forsale,
-      name, metadataImage, description, id);
+  int get hashCode => Object.hash(
+      runtimeType,
+      collectionId,
+      owner,
+      forsale,
+      name,
+      metadataContentType,
+      metadataImage,
+      metadataAnimationUrl,
+      description,
+      id);
 
   @JsonKey(ignore: true)
   @override
@@ -431,8 +488,14 @@ abstract class _GetMyNftsResponse extends GetMyNftsResponse {
       required String owner,
       required int forsale,
       required String name,
-      @JsonKey(name: 'metadata_image') required String metadataImage,
-      @JsonKey(name: 'metadata_description') String? description,
+      @JsonKey(name: 'metadata_content_type')
+          required String metadataContentType,
+      @JsonKey(name: 'metadata_image')
+          String? metadataImage,
+      @JsonKey(name: 'metadata_animation_url')
+          String? metadataAnimationUrl,
+      @JsonKey(name: 'metadata_description')
+          String? description,
       required String id}) = _$_GetMyNftsResponse;
   const _GetMyNftsResponse._() : super._();
 
@@ -448,8 +511,14 @@ abstract class _GetMyNftsResponse extends GetMyNftsResponse {
   @override
   String get name;
   @override
+  @JsonKey(name: 'metadata_content_type')
+  String get metadataContentType;
+  @override
   @JsonKey(name: 'metadata_image')
-  String get metadataImage;
+  String? get metadataImage;
+  @override
+  @JsonKey(name: 'metadata_animation_url')
+  String? get metadataAnimationUrl;
   @override
   @JsonKey(name: 'metadata_description')
   String? get description;
