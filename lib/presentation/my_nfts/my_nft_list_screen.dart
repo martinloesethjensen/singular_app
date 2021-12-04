@@ -8,14 +8,14 @@ import 'package:singular_app/domain/my_nfts/entities/nft.dart';
 import 'package:singular_app/presentation/my_nfts/my_nft_list_cubit.dart';
 import 'package:singular_app/presentation/my_nfts/my_nft_list_state.dart';
 
-class MyNftList extends StatefulWidget {
-  const MyNftList({Key? key}) : super(key: key);
+class MyNftListScreen extends StatefulWidget {
+  const MyNftListScreen({Key? key}) : super(key: key);
 
   @override
-  State<MyNftList> createState() => _MyNftListState();
+  State<MyNftListScreen> createState() => _MyNftListScreenState();
 }
 
-class _MyNftListState extends State<MyNftList> {
+class _MyNftListScreenState extends State<MyNftListScreen> {
   final _presenter = MyNftListCubit(
     getMyNftsUseCase: dependencies.get(),
   );
@@ -29,16 +29,18 @@ class _MyNftListState extends State<MyNftList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'My NFTs',
+          style: TextStyle(
+            fontSize: 36,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: [
-            const Text(
-              'My NFTs',
-              style: TextStyle(
-                fontSize: 36,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
             BlocBuilder<MyNftListCubit, MyNftListState>(
               bloc: _presenter,
               builder: (context, state) {
@@ -69,12 +71,6 @@ class _MyNftListState extends State<MyNftList> {
                       return NftImage(nft: nfts[index]);
                     },
                   ),
-                );
-
-                return Column(
-                  children: [
-                    ...nfts.map((nft) => NftImage(nft: nft)),
-                  ],
                 );
               },
             ),

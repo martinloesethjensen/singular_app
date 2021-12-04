@@ -12,6 +12,14 @@ A Very Good Project created by Very Good CLI.
 
 ## Getting Started 🚀
 
+Ensure you have [Flutter installed](https://docs.flutter.dev/get-started/install).
+
+When Flutter is installed you should run:
+
+```sh
+$ flutter pub get
+```
+
 This project contains 3 flavors:
 
 - development
@@ -22,13 +30,13 @@ To run the desired flavor either use the launch configuration in VSCode/Android 
 
 ```sh
 # Development
-$ flutter run --flavor development --target lib/main_development.dart
+$ flutter run --flavor development -t lib/main_development.dart --dart-define GRAPHQL_ENDPOINT=<endpoint_url>
 
 # Staging
-$ flutter run --flavor staging --target lib/main_staging.dart
+$ flutter run --flavor staging --target lib/main_staging.dart --dart-define GRAPHQL_ENDPOINT=<endpoint_url>
 
 # Production
-$ flutter run --flavor production --target lib/main_production.dart
+$ flutter run --flavor production --target lib/main_production.dart --dart-define GRAPHQL_ENDPOINT=<endpoint_url>
 ```
 
 _\*Singular App works on iOS, Android, and Web._

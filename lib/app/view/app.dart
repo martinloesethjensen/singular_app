@@ -8,7 +8,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:singular_app/l10n/l10n.dart';
-import 'package:singular_app/presentation/my_nfts/my_nft_list.dart';
+import 'package:singular_app/presentation/address_input/address_input_screen.dart';
+import 'package:singular_app/presentation/my_nfts/my_nft_list_screen.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -28,7 +29,7 @@ class App extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const MyNftList(),
+      home: const AddressInputScreen(),
     );
   }
 }
