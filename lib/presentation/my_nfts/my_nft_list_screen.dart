@@ -9,7 +9,9 @@ import 'package:singular_app/presentation/my_nfts/my_nft_list_cubit.dart';
 import 'package:singular_app/presentation/my_nfts/my_nft_list_state.dart';
 
 class MyNftListScreen extends StatefulWidget {
-  const MyNftListScreen({Key? key}) : super(key: key);
+  const MyNftListScreen({Key? key, required this.ksmAddress}) : super(key: key);
+
+  final String ksmAddress;
 
   @override
   State<MyNftListScreen> createState() => _MyNftListScreenState();
@@ -23,7 +25,7 @@ class _MyNftListScreenState extends State<MyNftListScreen> {
   @override
   void initState() {
     super.initState();
-    _presenter.fetchNfts();
+    _presenter.fetchNfts(widget.ksmAddress);
   }
 
   @override

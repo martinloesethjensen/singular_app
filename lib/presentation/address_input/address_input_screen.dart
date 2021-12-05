@@ -33,20 +33,26 @@ class _AddressInputScreenState extends State<AddressInputScreen> {
                 border: OutlineInputBorder(),
                 labelText: 'KSM Address',
               ),
+              onSubmitted: (value) => _onNavigateToMyNftList(context, value),
             ),
           ),
           ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const MyNftListScreen(),
-                ),
-              );
-            },
+            onPressed: () =>
+                _onNavigateToMyNftList(context, _controller.value.text),
             child: const Text('Continue'),
           )
         ],
+      ),
+    );
+  }
+
+  Future<dynamic> _onNavigateToMyNftList(BuildContext context, String value) {
+    return Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => MyNftListScreen(
+          ksmAddress: value,
+        ),
       ),
     );
   }

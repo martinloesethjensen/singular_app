@@ -8,14 +8,14 @@ class MyNftListCubit extends Cubit<MyNftListState> {
 
   final GetMyNftsUseCase getMyNftsUseCase;
 
-  Future fetchNfts() async {
+  Future fetchNfts(String ksmAddress) async {
     if (state.loading) return;
 
     emit(state.copyWith(loading: true));
 
     try {
       const _input = 'Etj4vCiSTCV939vibdTUyaL2YS2gNy5pDr5AnMkp33ybr4f';
-      final _nfts = await getMyNftsUseCase.run(_input);
+      final _nfts = await getMyNftsUseCase.run(ksmAddress);
 
       emit(state.copyWith(
         loading: false,
